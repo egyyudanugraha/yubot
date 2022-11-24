@@ -2,6 +2,7 @@
 const labelText = document.querySelector('.label-text');
 const inputJawaban = document.querySelector('input');
 const buttonKirim = document.querySelector('button');
+const probability = ['ga', 'gak', 'nga', 'ngga', 'nggak', 'g', 'blm', 'belum', 'blm', 'belom', 'beloom', 'belooom', 'ga tau', 'gak tau'];
 const formatData = {
   nama: null,
   kegiatan: null,
@@ -46,7 +47,7 @@ buttonKirim.addEventListener('click', () => {
   if (i === 2) {
     formatData.hubungan = inputJawaban.value.toLocaleLowerCase();
 
-    if (formatData.hubungan === 'belum') {
+    if (probability.includes(formatData.hubungan.toLocaleLowerCase())) {
       labelText.innerText = 'Kasian bgt, Awokowkowkwk 🤣🤣';
 
       i = 4;
